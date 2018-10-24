@@ -22,9 +22,6 @@ author: bobh "bomazani"
 print("""1. Create a method/function so that it converts dash/underscore delimited words 
 into camel casing. The first word within the output should be capitalized 
 only if the original word was capitalized.""")
-# slice at hyphens &/or underscore,
-# capitalize each string (except for the first),
-# join back into one string.
 
 
 def to_camel_case(string):
@@ -80,11 +77,6 @@ before it\'s wrecked. Unfortunately for you, your drive is very bumpy!
 Given a string showing either flat road ("_") or bumps ("n"), work out 
 if you make it home safely. 15 bumps or under, return "Woohoo!", 
 over 15 bumps return "Car Dead".''')
-# Given a string, count the occurrences of 'n',
-# if <= 15 -> "Woohoo!" else -> "Care Dead"
-# "n" = "Woohoo!""
-# "_nnnnnnn_n__n______nn__nn_nnn" = "Car Dead"
-# "______n___n_" = "Woohoo!"
 
 test1 = "_nnnnnnn_n__n______nn__nn_nnn"
 test2 = "______n___n_"
@@ -99,24 +91,21 @@ def count_bumps(string):
 
 
 count_bumps(test1)
+
 count_bumps(test2)
 
 print("""4. Complete the function that accepts a string parameter, 
 and reverses each word in the string. 
 All spaces in the string should be retained.""")
-# Slice string at spaces.
-# map through & reverse each string.
-# join with spaces.
-# "This is an example!" ==> "sihT si na !elpmaxe"
-# "double  spaces"      ==> "elbuod  secaps"
 
 
 def reverse_indiv_words(string):
-    array = string.split(" ")
-    for word in array:
+    word_list = string.split(" ")
+    final_list = []
+    for word in word_list:
         word = word[::-1]
-        print(word)
-    new_string = ' '.join(array)
+        final_list.append(word)
+    new_string = ' '.join(final_list)
     print(new_string)
 
 
