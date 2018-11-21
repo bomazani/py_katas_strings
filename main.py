@@ -32,6 +32,7 @@ def to_camel_case(string):
         new_list.append(item.capitalize())
     new_string = "".join(new_list)
     print(new_string)
+    return
 
 
 to_camel_case("the-stealth-warrior")
@@ -50,7 +51,7 @@ def find_nth_occurrence(n, sub, string):
     start = 0
 
     while count < n:
-        index = string.find(sub, start)
+        index = string.find(sub, start=start)
         count += 1
         start = index + 1
 
@@ -96,15 +97,20 @@ print("""4. Complete the function that accepts a string parameter,
 and reverses each word in the string. 
 All spaces in the string should be retained.""")
 
-
 def reverse_indiv_words(string):
     word_list = string.split(" ")
     final_list = []
     for word in word_list:
-        word = word[::-1]
-        final_list.append(word)
+        # word = word[::-1]
+        final_list.append(word[::-1])
     new_string = ' '.join(final_list)
-    print(new_string)
+    return new_string
+
+# *** refactored ***
+# def reverse_words(sentence):
+#     reversed_words = ' '.join(reversed(sentence.split(' ')))
+#     print("reversed_words: {}.format(reversed_words))
+#     return reversed_words[::-1]
 
 
 reverse_indiv_words("This is an example!")
